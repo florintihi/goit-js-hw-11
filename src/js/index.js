@@ -59,7 +59,7 @@ async function onSubmit(e) {
 
   try {
     const response = await axios.get(baseUrl, options);
-    totalHits = response.data.totalHits;
+    const totalHits = response.data.totalHits;
     const hits = response.data.hits;
     if (hits.length === 0) {
       moreButton.style.display = 'none';
@@ -82,6 +82,7 @@ async function getMorePhotos() {
   try {
     const response = await axios.get(baseUrl, options);
     const hits = response.data.hits;
+    const totalHits = response.data.totalHits;
     getPhotos(hits);
     if (options.params.page * options.params.per_page >= totalHits) {
       moreButton.style.display = 'none';
