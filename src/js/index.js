@@ -73,7 +73,7 @@ async function onSubmit(e) {
       moreButton.style.display = 'block';
     }
   } catch (err) {
-    Notify.failure(err);
+    console.log(err);
   }
 }
 
@@ -88,7 +88,7 @@ async function getMorePhotos() {
       Notify.info("We're sorry, but you've reached the end of search results.");
     }
   } catch (err) {
-    Notify.failure(err);
+    console.log(err);
   }
 }
 
